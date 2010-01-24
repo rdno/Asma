@@ -1,0 +1,6 @@
+# List of source files containing translatable strings.
+
+#Python Files
+asma.py
+asma/__init__.py
+asma/widgets.py
