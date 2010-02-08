@@ -1,2 +1,4 @@
 include README
 recursive-include po *.po
+recursive-include icons *.png
+recursive-include data *

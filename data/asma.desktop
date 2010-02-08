@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Asma
+Name[tr]=Asma
+Comment=An application for manage your system
+Comment[tr]=Sisteminizi yönetmek için bir uygulama
+Exec=asma
+Icon=asma
+Type=Application
+Categories=Application;Gtk;System;Settings;
