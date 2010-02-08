@@ -22,6 +22,7 @@ get_icon - gets icon from gtk.IconTheme return Pixbuf
 #
 
 import gtk
+import gobject
 
 def get_icon(name, size=48, flags=0):
     """gets icon from gtk.IconTheme return Pixbuf
@@ -31,4 +32,16 @@ def get_icon(name, size=48, flags=0):
     - `size`: icon size
     - `flags`: the flags modifying the behavior of the icon lookup
     """
-    return gtk.IconTheme().load_icon(name, size, flags)
+    it = gtk.icon_theme_get_for_screen(gtk.gdk.Screen())
+    try:
+        return it.load_icon(name, size, flags)
+    except gobject.GError, e:
+        open_error_dialog(unicode(e))
+
+def open_error_dialog(text):
+    """opens a gtk error dialog"""
+    dialog = gtk.MessageDialog(type=gtk.MESSAGE_ERROR,
+                               buttons=gtk.BUTTONS_OK,
+                               message_format=text)
+    dialog.run()
+    dialog.destroy()
