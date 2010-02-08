@@ -38,6 +38,7 @@ class MainWindow(gtk.Window):
     def _set_style(self):
         self.set_title("Asma")
         self.set_default_size(648, 400)
+        self.set_icon_name("asma")
     def _create_ui(self):
         self.add(self.asma)
         self.asma.show()
